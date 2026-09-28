@@ -7,21 +7,43 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <nav class="max-w-[1280px] mx-auto px-10 py-4 flex justify-between gap-12 items-center bg-white sticky top-0 z-50">
-        <div class="flex items-center gap-0">
-            <img src="images/catanddoglogo.jpeg" alt="cat and dog logo" class="w-20 h-15 object-contain">
-            <span class="font-bold font-serif text-[18px] tracking-tight text-[#854d0e]">WHISKER AND WAG</span>
-        </div>
 
-        <div class="flex items-center gap-6 ml-6">
-            <a href="home" class="text-[15px] font-bold tracking-[1.2px] text-black hover:text-[#854d0e]">HOME</a>
-            <a href="cats" class="text-[15px] font-bold tracking-[1.2px] text-black hover:text-[#854d0e]">CATS</a>
-            <a href="dogs" class="text-[15px] font-bold tracking-[1.2px] text-black hover:text-[#854d0e]">DOGS</a>
-            <a href="food" class="text-[15px] font-bold tracking-[1.2px] text-black hover:text-[#854d0e]">COMPARE</a>
-            <a href="food" class="text-[15px] font-bold tracking-[1.2px] text-black hover:text-[#854d0e]">CARE</a>
-        </div>
+    <nav class="max-w-[1280px] mx-auto px-4 md:px-10 py-4 flex justify-between items-center bg-white sticky top-0 z-50">
+    <div class="flex items-center gap-2">
+        <img src="images/cat-doglogo.jpeg" alt="cat and dog logo" class="w-20 h-20md:w-20 md:h-15 object-contain">
+        <span class="font-bold font-serif text-[14px] md:text-[18px] tracking-tight text-[#854d0e]">WHISKER AND WAG</span>
+    </div>
+
+    <div class="hidden md:flex items-center gap-6 ml-6">
+        <a href="home" class="text-[15px] font-bold tracking-[1.2px] text-black hover:text-[#854d0e]">HOME</a>
+        <a href="cats" class="text-[15px] font-bold tracking-[1.2px] text-black hover:text-[#854d0e]">CATS</a>
+        <a href="dogs" class="text-[15px] font-bold tracking-[1.2px] text-black hover:text-[#854d0e]">DOGS</a>
+        <a href="compare" class="text-[15px] font-bold tracking-[1.2px] text-black hover:text-[#854d0e]">COMPARE</a>
+        <a href="care" class="text-[15px] font-bold tracking-[1.2px] text-black hover:text-[#854d0e]">CARE</a>
+    </div>
+
+  
+    <button id="menuBtn" class="md:hidden w-10 h-10 bg-black/5 rounded-full flex items-center justify-center text-[18px]">☰</button>
     </nav>
 
+    <div id="mobileMenu" class="hidden fixed inset-0 z-[60] bg-white md:hidden">
+        <div class="flex justify-between items-center px-4 py-4 border-b">
+            <span class="font-bold font-serif text-[14px] text-[#854d0e]">WHISKER AND WAG</span>
+            <button id="closeBtn" class="w-10 h-10 bg-black/5 rounded-full flex items-center justify-center">✕</button>
+        </div>
+        <div class="flex flex-col p-6 gap-6">
+            <a href="home" class="text-[18px] font-bold tracking-[1.2px]">HOME</a>
+            <a href="cats" class="text-[18px] font-bold tracking-[1.2px]">CATS</a>
+            <a href="dogs" class="text-[18px] font-bold tracking-[1.2px]">DOGS</a>
+            <a href="food" class="text-[18px] font-bold tracking-[1.2px]">COMPARE</a>
+            <a href="food" class="text-[18px] font-bold tracking-[1.2px]">CARE</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('menuBtn').onclick = () => document.getElementById('mobileMenu').classList.remove('hidden');
+         document.getElementById('closeBtn').onclick = () => document.getElementById('mobileMenu').classList.add('hidden');
+    </script>
 
     <section id="home" class="w-full">
         <img src="images/customimage1.jpeg" alt="cat and dog" class="w-full h-[450px] object-cover">
@@ -43,44 +65,24 @@
     </div>
 
 
-    <section id="cats">
-        <main class="w-full bg-white pt-24 pb-12 mt-16">
-            <div class="max-w-[1280px] mx-auto px-8">
+    <section id="cats" class="w-full bg-white py-12 px-6 md:px-16">
+        <div class="max-w-[1300px] mx-auto grid grid:cols-1 md:grid-cols-2 gap-10 items-center">
 
-                <article class="grid md:grid-cols-2 gap-10 items-center">
-                    <figure class="w-full h-[450px] rounded-[32px] overflow-hidden">
-                        <img src="images/catimage1.jpeg" alt="Cute Cat">
-                    </figure>
-
-                    <aside>
-                        <header>
-                            <p><small>01 / CATS</small></p>
-                            <h2><strong>Soft Paws,</strong><br><em>Big Hearts.</em></h2>
-                        </header>
-                        <p>Cats are <mark>independent</mark> and curious.</p>
-                        <blockquote>"Cats own our homes."</blockquote>
-                        <hr class="my-4">
-                        <abbr title="For Example">eg.</abbr> Whiskers are super sensitive!
-                    </aside>
-                </article>
-
-                <section class="grid md:grid-cols-3 gap-6 mt-12">
-                    <article class="bg-white rounded-[24px] p-6">
-                        <h3>What They Love</h3>
-                        <ul><li>Sunny spots</li><li>Boxes</li><li>Chin scratches</li></ul>
-                        <details><summary>More</summary><p>Cats love warm places.</p></details>
-                    </article>
-                    <article class="bg-[#3B2314] text-white rounded-[24px] p-6">
-                        <h3>What They Need</h3>
-                        <ol><li>Clean litter</li><li>Fresh water</li><li>Vet checkup</li></ol>
-                    </article>
-                    <article class="bg-white rounded-[24px] p-6">
-                        <h3>Behavior</h3>
-                        <dl><dt>Slow blink = Trust</dd><dt>Purring = Love</dd></dl>
-                    </article>
-                </section>
+            <div class="w-full">
+                <img src="images/catimage1.jpeg" alt="cute cat" class="w-full h-[420px] object-cover rounded-tr-[40px] rounded-br-[10px] rounded-tl-[0px] rounded-bl-[0px]">
             </div>
-       </main>
+
+            <div class="lp-2 md:pl-10">
+                <h2 class="text-[64px] font-black leading-none tracking-tighter text-black">01. CAT</h2>
+                <div class="h-[4px] bg-[#8B2E2E] w-[60px] mt-4"></div>
+
+                <p class="mt-6 text-[15px] leading-[26px] text-grey-700 max-w-[480px]">
+                    Cats are graceful, independent, and full of mystery. Unlike dogs, they love corners, soft naps, and their own space. They are naturally clean, always grommingthemselves, and have sharp eyes that can see even in the dark.
+                    <br><br>
+                    From fluffy Persians to playful Bengals, each breed has its own charm. cats are not just pets - they are calm companions who bringpeace to our home with their soft purr and gentle presence. Easy to care, quiet, and lovingin their own way.
+                </p>
+            </div>
+        </div>
     </section>
 
 
@@ -140,38 +142,201 @@
         </div>
     </section>
 
-    <section id="care" class="w-full bg-brown py-16">
-        <div class="max-w-[1280px] mx-auto px-8 grid md:grid-cols-2 gap-10">
+    <div id="compare" class="bg-white p-6 mt-6 max-w-[600px]">
+        <h3 class="font-black uppercase text-[30px]">CAT FEATURES</h3>
+        <div class="h-[3px] bg-black w-[40px] mt-2 mb-4"></div>
+        <ul class="space-y-2 text-[20px] leading-relaxed">
+            <li><span class="font-bold">01. INDEPENDENT:</span> Cats love to live on their own terms</li>
+            <li><span class="font-bold">02. CLEAN:</span> Always grooms itself, very tidy</li>
+            <li><span class="font-bold">03. NIGHT VISION:</span> Can see clearly in dark</li>
+            <li><span class="font-bold">04. SOFT PURR:</span> Purring sound makes us calm</li>
+            <li><span class="font-bold">05. AGILE:</span> Can jump up to 6 times its height</li>
+            <li><span class="font-bold">06. WHISKERS:</span> Uses whiskers to sense surroundings</li>
+            <li><span class="font-bold">07. LIVES:</span> Famous for landing pn feet safetly</li>
+            <li><span class="font-bold">08. CURIOUS:</span> Loves to explore small boxes</li>
+            <li><span class="font-bold">09. AFEECTIONATE:</span> Shows love by head-butting</li>
+            <li><span class="font-bold">10. LOW MAINTENANCE:</span> Easy to care compared to dogs</li>
+        </ul>
+    </div> 
 
-            <article class="bg-white rounded-[28px] p-8 border">
-                <h2 class="text-[28px] font-bold text-[#3B2314]">🐱 Did You Know? Fun Facts</h2>
-                <ul class="mt-5 spce-y-3 text-[13px] text-[#3B2314]/70">
-                    <li>🔹Cats Sleep <mark>16 Hours</mark> a day!</li>
-                    <li>🔹They have <strong>32 muscles</strong> in each ear!</li>
-                    <li>🔹Purring heals humans - true science!</li>
-                    <li>🔹 <em>9 lives</em> myth from their agibility</li>
-                </ul>
-                <blockquote class="mt-6 bg-[#FFF0D9] p-4 rounded-[16px] text-[12px]">
-                    "A Cat's purr vibrates at 25Hz which helps bone healing"
-                </blockquote>
-            </article>
+
+    <section id="dogs" class="w-full bg-[#111] py-12 px-6 md:px-16">
+        <div class="max-w-[1300px] mx-auto grid grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+            <div class="flex:1 min-width:300px;">
+                <h2 class="text-[64px] font-black leading-none tracking-tighter text-white">02. DOG</h2>
+                <div class="h-[4px] bg-[#3B82F6] w-[60px] mt-4"></div>
+
+                <p class="mt-6 text-[15px] leading-[26px] text-white max-w-[480px]">
+                    Dogs are loyal, energetic, and full of love. Unlike cats, they love to be around people, play all day, and protect their family. They are known for their strong sense of smell and hearing.
+                    <br><br>
+                    From friendly Golden Retrievers to brave German Shepherds, each dog breed has its own superpower. Dogs are not just pets - they are family, best friends, and guardians who give us 100% loyaly every single day.
+                </p>
+            </div>
+
+                <div class="w-full flex:1">
+                    <img src="images/dogimage1.jpeg" alt="dog" class="w-full h-[420px] object-cover rounded-tl-[40px] rounded-bl-[10px]">
+                </div>
         </div>
     </section>
 
+    <div class="max-w-[1280px] mx-auto px-8 bg-[#111]">
+        <h2 class="text-[32px] font-bold text-white text-center hover:underline">Popular Dog Breeds:</h2>
+    </div>
+            
 
-    <section class="dogs">
-        <main class="w-full bg-white pt-24 pb-12 mt-16">
-            <div class="max-w-[1280px] mx-auto px-8">
+    <section class="w-full bg-[#111] py-16">
+        <div class="max-w-[1280px] mx-auto px-6">
 
-                <article class="grid md:grid-cols-2 gap-10 items-center">
-                    <figure class="w-full h-[450px] rounded-[32px] overflow-hidden">
-                        <img src="images/dogimage1.jpeg" alt="Cute dog">
-                    </figure>
+        <h2 class="text-[40px] font-black text-white uppercase tracking-tighter">DOG BREEDS / LIST</h2>
+        <div class="h-[4px] bg-[#3B82F6] w-[80px] mt-2"></div>
 
+        <div class="mt-10 border-t border-white/20">
+            <div class="grid grid-cols-[80px_100px_1fr_100px] md:grid-cols-[80px_140px_1fr_120px_100px] items-center py-4 border-b border-white/10 text-white hover:bg-white/5">
+                <span class="font-black text-[24px] opacity-30">01</span>
+                <img src="images/dogimage2.jpeg" class="w-[190px] h-[210px] object-cover">
+                <div class="pl-6">
+                    <h3 class="font-bold uppercase text-[14px]">Golden Retriever</h3>
+                    <p class="text-[11px] opacity-50 uppercase">Friendly & Loyal</p></div>
+            </div>
 
+            <div class="grid grid-cols-[80px_100px_1fr_100px] md:grid-cols-[80px_140px_1fr_120px_100px] items-center py-4 border-b border-white/10 text-white hover:bg-white/5">
+                <span class="font-black text-[24px] opacity-30">02</span>
+                <img src="images/dogimage3.jpeg" class="w-[150px] h-[200px] object-cover">
+                <div class="pl-6">
+                    <h3 class="font-bold uppercase text-[14px]">German Shepherd</h3>
+                    <p class="text-[11px] opacity-50 uppercase">Brave Protector</p></div>
+            </div>
+
+            <div class="grid grid-cols-[80px_100px_1fr_100px] md:grid-cols-[80px_140px_1fr_120px_100px] items-center py-4 border-b border-white/10 text-white hover:bg-white/5">
+                <span class="font-black text-[24px] opacity-30">03</span>
+                <img src="images/dogimage4.jpeg" class="w-[150px] h-[200px] object-cover">
+                <div class="pl-6">
+                    <h3 class="font-bold uppercase text-[14px]">Labrador</h3>
+                    <p class="text-[11px] opacity-50 uppercase">Playful Family Dog</p></div>
+            </div>
+
+            <div class="grid grid-cols-[80px_100px_1fr_100px] md:grid-cols-[80px_140px_1fr_120px_100px] items-center py-4 border-b border-white/10 text-white hover:bg-white/5">
+                <span class="font-black text-[24px] opacity-30">04</span>
+                <img src="images/dogimage5.jpeg" class="w-[150px] h-[200px] object-cover">
+                <div class="pl-6">
+                    <h3 class="font-bold uppercase text-[14px]">Husky</h3>
+                    <p class="text-[11px] opacity-50 uppercase">Energetic & Loud</p></div>
+            </div>
+
+            <div class="grid grid-cols-[80px_100px_1fr_100px] md:grid-cols-[80px_140px_1fr_120px_100px] items-center py-4 border-b border-white/10 text-white hover:bg-white/5">
+                <span class="font-black text-[24px] opacity-30">05</span>
+                <img src="images/dogimage6.jpeg" class="w-[150px] h-[200px] object-cover">
+                <div class="pl-6">
+                    <h3 class="font-bold uppercase text-[14px]">Beagle</h3>
+                    <p class="text-[11px] opacity-50 uppercase">Cute & Curious</p></div>
+            </div>
+        </div>
     </section>
 
+    <div class="bg-[#111] border border-white/10 p-6 max-full">
+        <h3 class="font-black uppercase text-[35px] text-white">DOG FEATURES</h3>
 
+        <div class="h-[3px] bg-[#3B82F6] w-[40px] mt-2 mb-4"></div>
+        <ul class="space-y-2 text-[20px] leading-relaxed text-white/70">
+            <li><span class="font-bold text-white">01. LOYAL:</span> Never leaves owner, 100% faithful</li>
+            <li><span class="font-bold text-white">02. PROTECTIVE:</span> Brave guard, protects home & family</li>
+            <li><span class="font-bold text-white">03. SUPER SMELL:</span> 40x stronger nose than humans</li>
+            <li><span class="font-bold text-white">04. SUPER HEARING:</span> Can hear sounds from far away</li>
+            <li><span class="font-bold text-white">05. ENERGETIC:</span> Always ready to play, run and jump</li>
+            <li><span class="font-bold text-white">06. TRAINABLE:</span> Learns 200+ words & tricks quickly</li>
+            <li><span class="font-bold text-white">07. FRIENDLY:</span> Loves kids, family and strangers</li>
+            <li><span class="font-bold text-white">08. STRONG:</span> Can pull, run fast and work hard</li>
+            <li><span class="font-bold text-white">09. EMPATHY:</span> Can sense your sadness & happiness</li>
+            <li><span class="font-bold text-white">10. TEAM WORK:</span> Works with police, army & rescue</li>
+            <li><span class="font-bold text-white">11. UNCONDITIONAL LOVE:</span> Loves you no matter what</li>
+        </ul>
+    </div>
+
+    
+    <footer class="w-full bg-[#faf9f6] border-t border-black/10 px-4 sm:px-6 md:px-12 lg:px-16 py-8 md:py-12">
+
+        <div class="w-full bg-[#faf9f6] overflow-hidden whitespace-nowrap py-4 border-t">
+            <h2 class="font-black text-[22px] md:text-[30px] uppercase tracking-[4px] animate-[marquee_10s_linear_infinite] inline-block">
+                WHISKER AND WAG • WHISKER AND WAG • WHISKER AND WAG • WHISKER AND WAG •
+            </h2>
+        </div>
+
+       <style>
+            @keyframes marquee {
+                0% { transform: translateX(-50%); }
+                100% { transform: translateX(0%); }
+            }
+        </style>
+
+        <div class="text-[13px] space-y-2">
+            <p class="font-bold uppercase text-[11px] tracking-[2px]">Links</p>
+            <a href="#" class="block hover:text-orange-500 transition">Home</a>
+            <a href="#" class="block hover:text-orange-500 transition">About</a>
+        </div>
+
+        <div class="text-[13px] space-y-2">
+            <p class="font-bold uppercase text-[11px] tracking-[2px]">Contact</p>
+            <p>info@whiskerandwag.com</p>
+        </div>
+
+        <div>
+            <p class="font-bold uppercase text-[11px] tracking-[2px] mb-3">Join Us</p>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <input type="email" placeholder="Email" class="border border-black/20 px-3 py-2 text-[12px] w-full sm:w-auto flex-1 outline-none focus:border-orange-500 transition">
+                <button class="bg-black text-white px-5 py-2 text-[11px] font-bold uppercase hover:bg-orange-500 transition">Join</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); color: #7a0a0a; }
+            50% { transform: translateY(-5px); color: #ff6b00; }
+        }
+    </style>
+    </footer>
+
+
+    <div id="loginModal" class="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-center justify-center px-4 hidden">
+        <div class="w-full max-w-[480px] bg-white rounded-[24px] p-6 md:p-8 relative shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
+            <button id="closeLogin" class="absolute top-4 right-4 w-9 h-9 bg-black/5 rounded-full flex items-center justify-center text-[16px] hover:bg-black hover:text-white transition">✕</button>
+            <div class="text-center mb-6">
+                <h2 class="font-black text-[22px] md:text-[28px] uppercase">Welcome Back</h2>
+                <p class="text-[12px] text-black/50 mt-1">Login to see Whisker and Wag</p>
+            </div>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="text-[11px] uppercase tracking-[2px] font-bold">Email</label>
+                    <input type="email" id="email" required placeholder="sree@example.com" class="w-full mt-2 border border-black/15 rounded-[12px] px-4 py-3.5 text-[14px] outline-none focus:border-[#854d0e]">
+               </div>
+               <div>
+                    <label class="text-[11px] uppercase tracking-[2px] font-bold">Password</label>
+                    <input type="password" id="password" required placeholder="••••••••" class="w-full mt-2 border border-black/15 rounded-[12px] px-4 py-3.5 text-[14px] outline-none focus:border-[#854d0e]">
+                </div>
+                <button type="submit" class="w-full bg-black text-white py-4 rounded-[12px] text-[12px] font-bold uppercase tracking-[2px] hover:bg-[#854d0e]">Login →</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('loginModal');
+        const closeBtn = document.getElementById('closeLogin');
+        window.addEventListener('load', () => {
+            if(localStorage.getItem('isLoggedIn')!== 'true'){
+            modal.classList.remove('hidden');
+            }
+        });
+        closeBtn.onclick = () => modal.classList.add('hidden');
+        document.getElementById('loginForm').addEventListener('submit', (e)=>{
+            e.preventDefault();
+            localStorage.setItem('isLoggedIn','true');
+            modal.classList.add('hidden');
+        });
+        modal.addEventListener('click', (e)=>{
+        if(e.target === modal) modal.classList.add('hidden');
+        });
+    </script>
     
 </body>
 </html>
